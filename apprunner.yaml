@@ -13,7 +13,17 @@ run:
   network:
     port: 8000
   env:
-    - name: FLASK_ENV
-      value: production
+    - name: SUPABASE_URL
+      value: https://fwotktpzxkoiplcjzeoc.supabase.co
+    - name: SUPABASE_KEY
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ3b3RrdHB6eGtvaXBsY2p6ZW9jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk3NzU1NjMsImV4cCI6MjA3NTM1MTU2M30.R-ZvT3v-E76kBDaB3_aVdGVlLG435n0QBMSMRWS_leQ
+    - name: SUPABASE_DB_URL
+      value: postgresql://postgres.fwotktpzxkoiplcjzeoc:Csctest1007!@aws-1-ap-northeast-1.pooler.supabase.com:6543/postgres
+    - name: SECRET_KEY
+      value: your-secret-key-for-waf-version
+    - name: DB_TYPE
+      value: postgresql
     - name: PORT
       value: 8000
+    - name: FLASK_ENV
+      value: production
