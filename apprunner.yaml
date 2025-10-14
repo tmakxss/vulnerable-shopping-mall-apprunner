@@ -8,7 +8,6 @@ build:
       - pip install -r requirements.txt
       - echo "Build completed successfully"
 run:
-  runtime-version: 3.12
   command: python run.py
   network:
     port: 8000
