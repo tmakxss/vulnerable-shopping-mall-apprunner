@@ -1,0 +1,23 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "Setting up Python environment for Flask app"
+        - python3 --version
+        - pip3 --version
+        - pip3 install --upgrade pip
+        - pip3 install -r requirements.txt
+    build:
+      commands:
+        - echo "Preparing Flask application for deployment"
+        - python3 -c "from app import create_app; app = create_app(); print('Flask app initialized successfully')"
+        - echo "Flask vulnerable shopping mall ready for deployment"
+  artifacts:
+    baseDirectory: .
+    files:
+      - '**/*'
+    name: vulnerable-shopping-mall
+  cache:
+    paths:
+      - /root/.cache/pip/**/*
