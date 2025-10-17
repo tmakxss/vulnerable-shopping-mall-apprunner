@@ -3,6 +3,10 @@ from app.utils import get_database_status
 import os
 
 bp = Blueprint('health', __name__)
+@bp.route('/live')
+def live():
+    # DBに触らず即200を返す（App Runnerのヘルスチェック用）
+    return {"status": "ok", "service": "vulnerable-shopping-mall"}
 
 @bp.route('/health')
 def health_check():
